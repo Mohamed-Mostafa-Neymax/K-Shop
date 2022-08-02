@@ -1,0 +1,6 @@
+ngb-carousel img {
+    width: 100%;
+}
+::ng-deep ngb-carousel .carousel-indicators {
+    display: none;
+}

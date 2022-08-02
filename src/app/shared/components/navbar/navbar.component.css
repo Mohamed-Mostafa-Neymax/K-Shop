@@ -1,0 +1,36 @@
+nav {
+    background-color: #EEEEF8;
+    padding: unset;
+}
+.activeLink {
+    background-color: #B7AECA;
+    color: #ffffff;
+}
+.nav-item {
+    text-align: center;
+    margin: 0 2vw;
+    cursor: pointer;
+    padding: 6px 0px;
+}
+.nav-item:hover {
+    background-color: #B7AECA;
+}
+.nav-item a {
+    color: #23104E;
+}
+.nav-item a:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+.dropdown-menu {
+    text-align: center;
+    right: 0px;
+}
+.dropdown-item:hover {
+    background-color: #EEEEF8;
+    cursor: pointer;
+}
+.dropdown-menu a:hover {
+    background-color: #B7AECA;
+    color: #ffffff;
+}

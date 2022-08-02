@@ -1,0 +1,35 @@
+<div class="products">
+    <div class="product" *ngFor="let prod of products">
+        <a class="activePart" (click)="onShowDetails(prod)">
+            <div class="badgeAndCompareIcon">
+                <div class="compareIcon">
+                    <img [src]="'assets/compare_arrows_1.png'" alt="compare_arrow">
+                </div>
+                <div class="newBadge" *ngIf="prod['isNew']">جديد</div>
+                <div class="offerBadge" *ngIf="prod['hasOffer']">عرض</div>
+            </div>
+            <div class="productImage">
+                <img [src]="prod['image']" alt="productImage">
+            </div>
+            <h5 class="productHeader">{{ prod['name'] }}</h5>
+        </a>
+        <div class="productRate">
+            <img *ngFor="let item of prod['activeStars']" [src]="'assets/activeStar_1.png'" alt="active_star_rate">
+            <img *ngFor="let item of prod['inactiveStars']" [src]="'assets/inactiveStar_1.png'" alt="inactive_star_rate">
+        </div>
+        <div class="productPriceBefore" *ngIf="prod['hasOffer']">{{ prod['priceBefore'] }} ج.م</div>
+        <div class="productPrice">{{ prod['price'] }} ج.م</div>
+        <div class="addToCart">
+            <button mat-raised-button color="primary" (click)="onAddToCart(prod)">
+                <img src="assets/shopping_cart2.png" alt="logo"> <span class="addButtonName">أضف للسلة</span>
+            </button>
+            <div>
+                <img src="assets/share.png" alt="share">
+            </div>
+            <div class="favoritePart" (click)="onToggleFavorite(prod)">
+                <img src="assets/unfavorite.png" alt="unfavorite" *ngIf="!prod['isFavorite']">
+                <img src="assets/favorite.png" alt="favorite" *ngIf="prod['isFavorite']">
+            </div>
+        </div>
+    </div>
+</div>

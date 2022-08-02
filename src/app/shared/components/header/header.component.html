@@ -1,0 +1,35 @@
+<header>
+    <div class="cartContainer">
+        <button mat-stroked-button (click)="onShowCart()">
+            <span [matBadge]="cartProductsAmount" matBadgeOverlap="true"><img src="assets/shopping_cart.png" alt="logo"></span> <span class="shoppingCart">سلة التسوق</span>
+        </button>
+    </div>
+    <div class="profileContainer">
+        <button mat-stroked-button [matMenuTriggerFor]="menu">
+            <img src="assets/person.png" alt="logo">
+        </button>
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item [routerLink]="['/profile']">عرض الصفحة الشخصية</a>
+            <button mat-menu-item>خروج</button>
+        </mat-menu>
+    </div>
+    <div class="searchContainer" [ngStyle]="{'z-index': cartIsShown || productIsShown != undefined ? 20 : 30}">
+        <mat-form-field>
+            <input matInput placeholder="عم تبحث؟" (focus)="onFocusSearch()" (input)="onSearchProducts()" [(ngModel)]="searchInp">
+            <mat-icon matSuffix>
+                <span class="material-symbols-outlined">search</span>
+            </mat-icon>
+        </mat-form-field>
+        <div class="searchDropdown" *ngIf="searchInp.length > 0 && isOverlayActive">
+            <h3 class="searchedProduct" *ngIf="searchProducts.length == 0">No matches!</h3>
+            <ul>
+                <li class="searchedProduct" 
+                hoverDirective 
+                *ngFor="let product of searchProducts" (click)="onShowDetails(product)">{{ product.name }}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="logoContainer">
+        <a mat-menu-item [routerLink]="['/']"><img src="assets/logo.png" alt="logo"></a>
+    </div>
+</header>

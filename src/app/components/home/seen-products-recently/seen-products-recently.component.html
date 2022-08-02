@@ -1,0 +1,37 @@
+<div class="no-seen-products" *ngIf="products.length == 0">
+    <h3>لم يتم تصفح المنتجات حتي الان</h3>
+    <img src="assets/sadFace.png" class="sadFace" alt="sad-face">
+    <h3>أضغط علي أي منتج للتصفح</h3>
+</div>
+<div class="products" *ngIf="products.length > 0">
+    <div class="product" *ngFor="let prod of products">
+        <div class="productRightSide">
+            <div class="badgeAndCompareIcon">
+                <div class="compareIcon">
+                    <img [src]="'assets/compare_arrows_1.png'" alt="compare_arrow">
+                </div>
+                <div class="newBadge" *ngIf="prod['isNew']">جديد</div>
+                <div class="offerBadge" *ngIf="prod['hasOffer']">عرض</div>
+            </div>
+            <div class="productImage">
+                <img [src]="prod['image']" alt="productImage">
+            </div>
+        </div>
+        <div class="productLeftSide">
+            <div class="productSpecs">
+                <h5 class="productHeader" (click)="onShowDetails(prod)">{{ prod['name'] }}</h5>
+                <div class="productPriceBefore" *ngIf="prod['hasOffer']">{{ prod['priceBefore'] }} ج.م</div>
+                <div class="productPrice">{{ prod['price'] }} ج.م</div>
+            </div>
+            <div class="productActions">
+                <div class="addToCart" (click)="onAddToCart(prod)">
+                    <img src="assets/shopping_cart3.png" alt="logo">
+                </div>
+                <div class="shareAndFavorite">
+                    <img src="assets/favorite.png" class="favorite" alt="favorite">
+                    <img src="assets/share.png" alt="logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

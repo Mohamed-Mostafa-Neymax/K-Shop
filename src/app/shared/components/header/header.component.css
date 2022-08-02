@@ -1,0 +1,54 @@
+header {
+    background-color: #ffffff;
+    padding-top: .5em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.searchContainer { position: relative; }
+mat-form-field {
+    width: 60vw;
+}
+ul {
+    padding: unset;
+}
+.searchDropdown {
+    position: absolute;
+    background-color: #F6F6F6;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 150px;
+    top: 44px;
+    text-align: center;
+}
+.searchedProduct {
+    list-style: none;
+    padding: 5px 0px;
+    cursor: pointer;
+}
+::ng-deep .mat-form-field-flex {
+    background-color: #ffffff;
+}
+mat-form-field, .mat-stroked-button, .mat-menu-item {
+    font-family: CairoRegular !important;
+}
+.mat-stroked-button {
+    background-color: #EEEEF8;
+}
+.mat-menu-item, mat-form-field {
+    text-align: right !important;
+}
+.cartContainer, .profileContainer, .logoContainer {
+    padding-bottom: 1.25em;
+}
+.logoContainer a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.shoppingCart { margin-left: 10px; }
+.mat-menu-item:hover {
+    background-color: #B7AECA;
+    color: #ffffff;
+}

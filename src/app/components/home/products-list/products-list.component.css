@@ -1,0 +1,75 @@
+.products {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    direction: rtl;
+}
+.product {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+}
+.activePart {
+    display: block;
+    text-decoration: none;
+    color: unset;
+    cursor: pointer;
+}
+.badgeAndCompareIcon {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 5px;
+    left: 0px;
+    padding: 10px 14px;
+}
+.newBadge {
+    background-color: #302ca2;
+}
+.offerBadge {
+    background-color: #26a37c;
+}
+.newBadge, .offerBadge {
+    color: #ffffff;
+    padding: 5px 14px;
+    border-radius: 23px;
+}
+
+.compareIcon { cursor: pointer; }
+.compareIcon:hover::after {
+    content: 'أضف للمقارنة';
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    background-color: #b7aeca;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 4px;
+    font-size: 0.8rem;
+}
+
+.productImage img {
+    width: 100%;
+}
+.productPrice {
+    font-family: CairoBold;
+    color: #302ca2;
+}
+.productPriceBefore {
+    text-decoration: line-through;
+    text-decoration-color: #302ca2;
+    color: #302ca2;
+}
+.addToCart {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+.mat-raised-button {
+    font-family: CairoRegular;
+    background-color: #302ca2;
+}
+.mat-raised-button img { margin-left: 10px; }
+.favoritePart { cursor: pointer; }

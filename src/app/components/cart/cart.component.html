@@ -1,0 +1,25 @@
+<app-modal>
+    <ul class="cart-items">
+        <li class="cart-item" *ngFor="let product of cartProducts">
+            <div>
+                <h5>{{ product.name }}</h5>
+                <div class="price-amount">
+                    <span class="price">{{ product.price + ' EGP' }}</span>
+                    <span class="amount">x {{ product.amount }}</span>
+                </div>
+            </div>
+            <div class="plus-minus">
+                <button (click)="onDecreaseAmount(product)">−</button>
+                <button (click)="onIncreaseAmount(product)">+</button>
+            </div>
+        </li>
+    </ul>
+    <div class="totalPrice">
+        <span>السعر الكلي</span>
+        <span>{{ totalPrice }} EGP</span>
+    </div>
+    <div class="actions">
+        <button class="backBtn" (click)="onCloseCart()">رجوع</button>
+        <button class="orderBtn">تنفيذ الطلب</button>
+    </div>
+</app-modal>

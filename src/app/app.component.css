@@ -1,0 +1,18 @@
+@font-face {
+    font-family: CairoRegular;
+    src: url(../assets/fonts/Cairo-Regular.ttf);
+}
+@font-face {
+    font-family: CairoBold;
+    src: url(../assets/fonts/Cairo-Bold.ttf);
+}
+
+.overallContent {
+    font-family: CairoRegular;
+}
+
+.stickyNav {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
