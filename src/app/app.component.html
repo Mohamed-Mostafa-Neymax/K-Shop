@@ -1,8 +1,6 @@
 <div class="overallContent">
-    <div class="stickyNav">
-        <app-header></app-header>
-        <app-navbar></app-navbar>
-    </div>
+    <app-header></app-header>
+    <app-navbar></app-navbar>
     <app-cart *ngIf="cartIsShown"></app-cart>
     <app-overlay *ngIf="overlayIsShown"></app-overlay>
     <app-product-details *ngIf="productDetails != undefined" [productDetails]="productDetails"></app-product-details>
